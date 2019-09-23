@@ -32,10 +32,10 @@
 		</tr>
 		<tr >
 			<td colspan="2">
-				<a href="modify_view.do?bId=${content_view.bId }">수정</a>&nbsp;&nbsp;
-				<a href="list.do">목록보기</a>&nbsp;&nbsp;
-				<a href="delete.do?bId=${content_view.bId }">삭제</a>&nbsp;&nbsp;
-				<a href="reply_view.do?bId=${content_view.bId }">답변</a>&nbsp;&nbsp;
+				<a href="modify_view.bo?bId=${content_view.bId }">수정</a>&nbsp;&nbsp;
+				<a href="list.bo">목록보기</a>&nbsp;&nbsp;
+				<a href="delete.bo?bId=${content_view.bId }">삭제</a>&nbsp;&nbsp;
+				<a href="reply_view.bo?bId=${content_view.bId }">답변</a>&nbsp;&nbsp;
 			</td>
 		</tr>
 	</table>

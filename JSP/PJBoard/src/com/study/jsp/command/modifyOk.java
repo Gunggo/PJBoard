@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.study.jsp.dao.BDao;
+import com.study.jsp.dao.MDao;
 import com.study.jsp.dto.BDto;
+import com.study.jsp.dto.MDto;
 
 public class modifyOk implements BCommand {
 
@@ -19,8 +21,8 @@ public class modifyOk implements BCommand {
 				request.setCharacterEncoding("UTF-8");
 				HttpSession session = request.getSession();
 				String id = (String)session.getAttribute("id");
-				BDao dao = new BDao();
-				BDto dto = dao.getMember(id);
+				MDao dao = new MDao();
+				MDto dto = dao.getMember(id);
 				dto.setId(id);
 				
 				int ri = dao.updateMember(dto);

@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.study.jsp.dao.BDao;
+import com.study.jsp.dao.MDao;
 import com.study.jsp.dto.BDto;
+import com.study.jsp.dto.MDto;
 
 public class joinOk implements BCommand {
 
@@ -24,8 +26,8 @@ public class joinOk implements BCommand {
 			String eMail = request.getParameter("eMail");
 			String address = request.getParameter("address");
 
-			BDao dao = new BDao();
-			BDto dto = new BDto();
+			MDao dao = new MDao();
+			MDto dto = new MDto();
 
 			dto.setId(id);
 			dto.setPw(pw);
@@ -37,7 +39,7 @@ public class joinOk implements BCommand {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter writer = response.getWriter();
 
-			if (dao.confirmId(dto.getId()) == BDao.MEMBER_EXISTENT) {
+			if (dao.confirmId(dto.getId()) == MDao.MEMBER_EXISTENT) {
 				writer.println("<html><head></head><body>");
 				writer.println("<script language=\"javascript\">");
 				writer.println("	alert(\"아이디가 이미 존재 합니다.\");");
@@ -47,7 +49,7 @@ public class joinOk implements BCommand {
 				writer.close();
 			} else {
 				int ri = dao.insertMember(dto);
-				if (ri == BDao.MEMBER_JOIN_SUCCESS) {
+				if (ri == MDao.MEMBER_JOIN_SUCCESS) {
 					HttpSession session = request.getSession();
 					session.setAttribute("id", dto.getId());
 

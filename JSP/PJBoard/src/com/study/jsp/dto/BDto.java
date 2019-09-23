@@ -5,36 +5,19 @@ import java.sql.Timestamp;
 public class BDto {
 
 	// 게시판 정보
-	int bId;
-	String bName;
-	String bTitle;
-	String bContent;
-	Timestamp bDate;
-	int bHit;
-	int bGroup;
-	int bStep;
-	int bIndent;
+	private int bId;
+	private String bName;
+	private String bTitle;
+	private String bContent;
+	private Timestamp bDate;
+	private int bHit;
+	private int bGroup;
+	private int bStep;
+	private int bIndent;
 
-	// 유저 정보
-	String id;
-	String pw;
-	String name;
-	String eMail;
-	Timestamp rDate;
-	String address;
 
 	public BDto() {
 		super();
-	}
-
-	public BDto(String id, String pw, String name, String eMail, Timestamp rDate, String address) {
-		super();
-		this.id = id;
-		this.pw = pw;
-		this.name = name;
-		this.eMail = eMail;
-		this.rDate = rDate;
-		this.address = address;
 	}
 
 	public BDto(int bId, String bName, String bTitle, String bContent, Timestamp bDate, int bHit, int bGroup, int bStep,
@@ -49,54 +32,6 @@ public class BDto {
 		this.bGroup = bGroup;
 		this.bStep = bStep;
 		this.bIndent = bIndent;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getPw() {
-		return pw;
-	}
-
-	public void setPw(String pw) {
-		this.pw = pw;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String geteMail() {
-		return eMail;
-	}
-
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
-	}
-
-	public Timestamp getrDate() {
-		return rDate;
-	}
-
-	public void setrDate(Timestamp rDate) {
-		this.rDate = rDate;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
 	}
 
 	public int getbId() {

@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.study.jsp.dao.BDao;
+import com.study.jsp.dao.MDao;
 import com.study.jsp.dto.BDto;
+import com.study.jsp.dto.MDto;
 
 
 public class loginOk implements BCommand {
@@ -21,7 +23,7 @@ public class loginOk implements BCommand {
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");
 
-			BDao dao = new BDao();
+			MDao dao = new MDao();
 			int checkNum = dao.userCheck(id, pw);
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter writer = response.getWriter();
@@ -37,7 +39,7 @@ public class loginOk implements BCommand {
 			}
 			HttpSession session = request.getSession();
 			if (checkNum == 1) {
-				BDto dto = dao.getMember(id);
+				MDto dto = dao.getMember(id);
 				dto = dao.getMember(id);
 
 				String name = dto.getName();

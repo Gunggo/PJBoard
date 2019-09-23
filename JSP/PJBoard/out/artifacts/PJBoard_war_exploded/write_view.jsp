@@ -8,7 +8,7 @@
 </head>
 <body>
 	<table width="500" cellpadding="0" cellspacing="0" border="1">
-		<form action="write.do" method="post">
+		<form action="write.bo" method="post">
 			<tr>
 				<td> 이름 </td>
 				<td> <input type="text" name="bName" size = "50"> </td>
@@ -24,7 +24,7 @@
 			<tr>
 				<td colspan="2">
 					<input type="submit" value="입력">&nbsp;&nbsp;
-					<a href="list.do">목록보기</a>
+					<a href="list.bo">목록보기</a>
 				</td>
 			</tr>
 		</form>

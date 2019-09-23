@@ -11,7 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <link rel="stylesheet" href="default.css">
     <link rel="stylesheet" href="login_styles.css">
@@ -24,7 +25,7 @@
     </style>
 </head>
 <body>
-<form action="loginOk.do" method="post" class="was-validated action">
+<form action="loginOk.mo" method="post" class="was-validated action">
     <div class="container">
         <div class="row">
             <div class="col-md-10 order-md-1">
@@ -63,25 +64,25 @@
                             // 카카오 로그인 버튼을 생성합니다.
                             Kakao.Auth.createLoginButton({
                                 container: '#kakao-login-btn',
-                                success: function(authObj) {
+                                success: function (authObj) {
                                     // 로그인 성공시, API를 호출합니다.
                                     Kakao.API.request({
                                         url: '/v2/user/me',
-                                        success: function(res) {
-                                            alert(JSON.stringify(res));
-                                            alert(JSON.stringify(authObj));
-                                            console.log(res.id);
-                                            console.log(res.kaccount_email);
-                                            console.log(res.properties['nickname']);
+                                        success: function (res) {
+                                            // alert(JSON.stringify(res));
+                                            // alert(JSON.stringify(authObj));
+                                            // console.log(res.id);
+                                            // console.log(res.kaccount_email);
+                                            // console.log(res.properties['nickname']);
+                                            // console.log(authObj.access_token);
 
-                                            console.log(authObj.access_token);
                                         },
-                                        fail: function(error) {
+                                        fail: function (error) {
                                             alert(JSON.stringify(error));
                                         }
                                     });
                                 },
-                                fail: function(err) {
+                                fail: function (err) {
                                     alert(JSON.stringify(err));
                                 }
                             });
@@ -97,28 +98,6 @@
         </div>
     </div>
 </form>
-</div>
-</div>
-</div>
-</form>
-<%--<form action="loginOk.do" method="post">--%>
-<%--        <fieldset>--%>
-<%--            <div class="form-gorup">--%>
-<%--                <ul class="top">--%>
-<%--                    <li><label for="txt1"></label><input type="text" class="form-control" name="id"--%>
-<%--                                                         value="<% if(session.getAttribute("id") != null)--%>
-<%--																	out.println(session.getAttribute("id"));--%>
-<%--															%>"></li>--%>
-<%--                    <li><label for="txt2"></label><input type="password" id="txt2" name="pw"></li>--%>
-<%--                </ul>--%>
-<%--            </div>--%>
-<%--                <ul class="btm">--%>
-<%--                    <li><input type="submit" value="로그인"></li>--%>
-<%--                    <li><input type="button" value="회원가입" onclick="javascript:window.location='join.jsp'"></li>--%>
-<%--                </ul>--%>
-<%--        </fieldset>--%>
-<%--</form>--%>
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

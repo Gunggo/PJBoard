@@ -8,7 +8,7 @@
 </head>
 <body>
 	<table width="500" cellpadding="0" cellspacing="0" border="1">
-		<form action="reply.do" method="post">
+		<form action="reply.bo" method="post">
 			<input type="hidden" name="bId" value="${reply_view.bId}">
 			<input type="hidden" name="bGroup" value="${reply_view.bGroup}">
 			<input type="hidden" name="bStep" value="${reply_view.bStep}">
@@ -40,7 +40,7 @@
 			</tr>
 			
 			<tr>
-				<td colspan="2"><input type="submit" value="답변"> <a href="list.do">목록</a></td>
+				<td colspan="2"><input type="submit" value="답변"> <a href="list.bo">목록</a></td>
 			</tr>
 		</form>
 	</table>
